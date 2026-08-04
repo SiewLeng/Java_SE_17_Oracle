@@ -15,6 +15,7 @@ public class chronounitTest {
         System.out.println(ChronoUnit.YEARS.between(localDate1, localDate2));
         System.out.println(ChronoUnit.MONTHS.between(localDate1, localDate2));
         System.out.println(ChronoUnit.DAYS.between(localDate1, localDate2));
+        System.out.println(ChronoUnit.DAYS.between(localDate2, localDate1));
     }
 
     public static void main(String[] args) {
