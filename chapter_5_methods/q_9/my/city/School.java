@@ -1,5 +1,5 @@
-package my.city;
-import my.school.*;
+package q_9.my.city;
+import q_9.my.school.*;
 
     public class School {
     public static void main(String[] args) {

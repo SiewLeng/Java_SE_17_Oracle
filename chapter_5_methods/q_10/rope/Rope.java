@@ -1,4 +1,4 @@
-package rope;
+package q_10.rope;
 
 public class Rope {
 

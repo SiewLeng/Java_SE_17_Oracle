@@ -1,4 +1,4 @@
-package my.school;
+package q_9.my.school;
 
 public class Classroom {
     private int roomNumber;
