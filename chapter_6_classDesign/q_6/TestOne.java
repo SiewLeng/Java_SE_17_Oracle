@@ -1,7 +1,7 @@
 package q_6;
 
 public class TestOne extends Reindeer {
-    public final int antlers = 7;
+    private final int antlers = 7;
 
     public static void main(String[] args) {
         // System.out.println("antler: " + new Reindeer().antlers);
