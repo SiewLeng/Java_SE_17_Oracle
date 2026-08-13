@@ -7,10 +7,12 @@ public abstract class Whale {
         Whale whale = new Orca();
         whale.dive(3);
     }
+
 }
 
 class Orca extends Whale {
     static public int MAX = 3;
+    
     public void dive() {
        System.out.println("Orca diving");
     }
@@ -18,12 +20,5 @@ class Orca extends Whale {
     public void dive(int... depth) {
         System.out.println("Orca diving deeper "+MAX);
     } 
-    
-    /* 
-    public static void main(String[] args) {
-        Whale whale = new Orca();
-        whale.dive(3);
-    }
-    */
 
 }
