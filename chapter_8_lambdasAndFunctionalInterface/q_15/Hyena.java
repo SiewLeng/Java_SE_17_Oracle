@@ -1,4 +1,4 @@
-package q_15;
+package q_24;
 
 import java.util.function.Predicate;
 public class Hyena {
