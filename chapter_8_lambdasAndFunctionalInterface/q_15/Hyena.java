@@ -1,10 +1,9 @@
-package q_24;
+package q_15;
 
 import java.util.function.Predicate;
 public class Hyena {
-    
     private int age = 1;
-
+    
     public static void main(String[] args) {
         var p = new Hyena();
         double height = 10;
