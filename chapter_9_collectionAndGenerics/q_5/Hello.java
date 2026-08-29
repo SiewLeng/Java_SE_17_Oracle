@@ -1,4 +1,4 @@
-package q_10;
+package q_5;
 
 public record Hello<T>(T t) {
     public Hello(T t) { this.t = t; }
