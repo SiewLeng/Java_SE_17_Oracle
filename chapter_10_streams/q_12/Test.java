@@ -1,3 +1,5 @@
+package q_12;
+
 import java.util.Set;
 import java.util.stream.Stream;
 
