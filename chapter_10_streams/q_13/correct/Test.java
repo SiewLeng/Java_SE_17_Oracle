@@ -15,7 +15,7 @@ public class Test {
             .forEach(System.out::println);
     }
 
-     public static void run2() {
+    public static void run2() {
         List<Integer> x1 = List.of(1, 2, 3);
         List<Integer> x2 = List.of(4, 5, 6);
         List<Integer> x3 = List.of(7, 8, 9);
