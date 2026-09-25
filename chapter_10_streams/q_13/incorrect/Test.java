@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 public class Test {
     
-    public static void run1() {
+    public static void run() {
         List<Integer> x1 = List.of(1, 2, 3);
         List<Integer> x2 = List.of(4, 5, 6);
         List<Integer> x3 = List.of();
@@ -14,6 +14,7 @@ public class Test {
             .flatMap(x -> x.stream())
             .forEach(System.out::println);
     }
+    
     public static void main(String[] args) {
         run();
     }
