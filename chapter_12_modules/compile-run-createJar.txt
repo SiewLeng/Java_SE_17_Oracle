@@ -11,3 +11,10 @@ jar -cvf mods/zoo.animal.feeding.jar -C feeding/ .
 
 // running jar file
 java -p mods -m zoo.animal.feeding/zoo.animal.feeding.Task
+
+
+javac -p mods -d care care/zoo/animal/care/details/*.java care/zoo/animal/care/medical/*.java care/module-info.java
+
+jar -cvf mods/zoo.animal.care.jar -C care/ .
+
+java -p mods -m zoo.animal.care/zoo.animal.care.medical.Diet
