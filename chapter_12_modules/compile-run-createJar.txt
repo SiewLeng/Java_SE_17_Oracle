@@ -18,3 +18,9 @@ javac -p mods -d care care/zoo/animal/care/details/*.java care/zoo/animal/care/m
 jar -cvf mods/zoo.animal.care.jar -C care/ .
 
 java -p mods -m zoo.animal.care/zoo.animal.care.medical.Diet
+
+javac -p mods -d talks talks/zoo/animal/talks/content/*.java talks/zoo/animal/talks/media/*.java talks/zoo/animal/talks/schedule/*.java talks/module-info.java
+
+jar -cvf mods/zoo.animal.talks.jar -C talks/ .
+
+java -p mods -m zoo.animal.talks/zoo.animal.talks.media.Announcement 
