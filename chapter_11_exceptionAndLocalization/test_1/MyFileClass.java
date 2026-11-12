@@ -21,6 +21,7 @@ public class MyFileClass implements AutoCloseable {
             throw new RuntimeException();
         } catch (Exception e) {
             System.out.println("Catch Block");
+            System.out.println(e);
         } finally {
             System.out.println("Finally Block");
         }

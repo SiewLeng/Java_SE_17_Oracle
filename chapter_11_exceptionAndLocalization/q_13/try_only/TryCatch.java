@@ -8,8 +8,8 @@ public class TryCatch {
     public static void readFile() throws IOException {
         BufferedReader br = null;
         try {
-            // br = new BufferedReader(new FileReader("q_13\\try_with\\test.txt"));
-            br = new BufferedReader(new FileReader("test.txt")); 
+            br = new BufferedReader(new FileReader("q_13\\try_with\\test.txt"));
+            // br = new BufferedReader(new FileReader("test.txt")); 
             // the above line will throw FileNotFoundException exception and the exception is caught.
             System.out.println(br.readLine());
         } catch(IOException e) {
