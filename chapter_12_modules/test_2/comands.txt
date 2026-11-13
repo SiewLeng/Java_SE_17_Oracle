@@ -1,0 +1,25 @@
+javac -d serviceProviderInterfaceModule serviceProviderInterfaceModule/zoo/tours/api/*.java serviceProviderInterfaceModule/module-info.java
+
+jar -cvf mods/zoo.tours.api.jar -C serviceProviderInterfaceModule/ . 
+
+--------------------------------------------------------------------------------------------------------------------------
+
+javac -p mods -d serviceLocatorModule serviceLocatorModule/zoo/tours/reservations/*.java serviceLocatorModule/module-info.java
+
+jar -cvf mods/zoo.tours.reservations.jar -C serviceLocatorModule/ .
+
+------------------------------------------------------------------------------------------------------------------------
+
+javac -p mods -d consumerModule consumerModule/zoo/visitor/*.java consumerModule/module-info.java
+
+jar -cvf mods/zoo.visitor.jar -C consumerModule/ .
+
+java -p mods -m zoo.visitor/zoo.visitor.Tourist
+
+----------------------------------------------------------------------------------------------------------------------------
+
+javac -p mods -d serviceProviderModule serviceProviderModule/zoo/tours/agency/*.java serviceProviderModule/module-info.java
+
+jar -cvf mods/zoo.tours.agency.jar -C serviceProviderModule/ .
+
+---------------------------------------------------------------------------------------------------------------------
