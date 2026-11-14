@@ -30,6 +30,7 @@ jar -cvf mods/zoo.animal.talks.jar -C talks/ .
 java -p mods -m zoo.animal.talks/zoo.animal.talks.media.Announcement 
 
 // run command from .class file in talk folder but must be in chapter_12 folder which parent of test_1
+// the mods folder must be removed
 java --module-path test_1 --module zoo.animal.feeding/zoo.animal.feeding.Task
 
 -------------------------------------------------------------------------------------------------------
