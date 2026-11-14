@@ -26,7 +26,11 @@ javac -p mods -d talks talks/zoo/animal/talks/content/*.java talks/zoo/animal/ta
 
 jar -cvf mods/zoo.animal.talks.jar -C talks/ .
 
+// running jar file from mods folder
 java -p mods -m zoo.animal.talks/zoo.animal.talks.media.Announcement 
+
+// run command from .class file in talk folder but must be in chapter_12 folder which parent of test_1
+java --module-path test_1 --module zoo.animal.feeding/zoo.animal.feeding.Task
 
 -------------------------------------------------------------------------------------------------------
 
