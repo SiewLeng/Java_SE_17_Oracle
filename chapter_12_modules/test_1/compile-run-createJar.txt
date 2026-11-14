@@ -1,6 +1,6 @@
 // all the command must run in chapter_12_modules/test_1 folder!!!!
 
-// compile command. -d specfies the destination where .class file are. 
+// compile command
 javac --module-path mods -d feeding feeding/zoo/animal/feeding/*.java feeding/module-info.java
 
 // run command from .class file in feeding folder
@@ -29,7 +29,7 @@ jar -cvf mods/zoo.animal.talks.jar -C talks/ .
 // running jar file from mods folder
 java -p mods -m zoo.animal.talks/zoo.animal.talks.media.Announcement 
 
-// run command from .class file in talk folder but must be in chapter_12 folder which parent of test_1
+// run command from .class file in talk folder but must be in chapter_12_modules folder which parent of test_1
 // the mods folder must be removed
 java --module-path test_1 --module zoo.animal.feeding/zoo.animal.feeding.Task
 
