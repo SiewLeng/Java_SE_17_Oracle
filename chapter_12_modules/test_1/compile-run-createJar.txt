@@ -1,15 +1,15 @@
 // all the command must run in chapter_12_modules/test_1 folder!!!!
 
-// compile command
+// compile command. -d specfies the destination where .class file are. 
 javac --module-path mods -d feeding feeding/zoo/animal/feeding/*.java feeding/module-info.java
 
-// run command
+// run command from .class file in feeding folder
 java --module-path feeding --module zoo.animal.feeding/zoo.animal.feeding.Task
 
 // creating jar file
 jar -cvf mods/zoo.animal.feeding.jar -C feeding/ .
 
-// running jar file
+// running jar file from mods folder
 java -p mods -m zoo.animal.feeding/zoo.animal.feeding.Task
 
 ---------------------------------------------------------------------------------------------------
