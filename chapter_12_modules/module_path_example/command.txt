@@ -1,0 +1,5 @@
+javac -d mods/com.utils src/com.utils/module-info.java src/com.utils/com/utils/Formatter.java 
+
+javac --module-path mods;lib -d mods/com.app src/com.app/module-info.java src/com.app/com/app/Main.java  
+
+java --module-path mods;lib --module com.app/com.app.Main
