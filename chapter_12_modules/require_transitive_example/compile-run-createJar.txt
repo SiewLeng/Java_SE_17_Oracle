@@ -1,0 +1,44 @@
+// all the command must run in chapter_12_modules/test_1 folder!!!!
+
+// compile command
+javac --module-path mods -d feeding feeding/zoo/animal/feeding/*.java feeding/module-info.java
+
+// run command from .class file in feeding folder
+java --module-path feeding --module zoo.animal.feeding/zoo.animal.feeding.Task
+
+// creating jar file
+jar -cvf mods/zoo.animal.feeding.jar -C feeding/ .
+
+// running jar file from mods folder
+java -p mods -m zoo.animal.feeding/zoo.animal.feeding.Task
+
+---------------------------------------------------------------------------------------------------
+
+javac -p mods -d care care/zoo/animal/care/details/*.java care/zoo/animal/care/medical/*.java care/module-info.java
+
+jar -cvf mods/zoo.animal.care.jar -C care/ .
+
+java -p mods -m zoo.animal.care/zoo.animal.care.medical.Diet
+
+-------------------------------------------------------------------------------------------------------
+
+javac -p mods -d talks talks/zoo/animal/talks/content/*.java talks/zoo/animal/talks/media/*.java talks/zoo/animal/talks/schedule/*.java talks/module-info.java
+
+jar -cvf mods/zoo.animal.talks.jar -C talks/ .
+
+// running jar file from mods folder
+java -p mods -m zoo.animal.talks/zoo.animal.talks.media.Announcement 
+
+// run command from .class file in talk folder but must be in chapter_12_modules folder which parent of test_1
+// the mods folder must be removed
+java --module-path test_1 --module zoo.animal.feeding/zoo.animal.feeding.Task
+
+-------------------------------------------------------------------------------------------------------
+
+javac -p mods -d staff staff/zoo/staff/*.java staff/module-info.java
+
+jar -cvf mods/zoo.staff.jar -C staff/ .
+
+java -p mods -m zoo.staff/zoo.staff.Jobs
+
+--------------------------------------------------------------------------
