@@ -9,7 +9,7 @@ public class Main {
 
     public static void run() throws InterruptedException, ExecutionException {
         ScheduledExecutorService service =   // w1
-        Executors.newSingleThreadScheduledExecutor();
+            Executors.newSingleThreadScheduledExecutor();
         service.scheduleWithFixedDelay(() -> {
             System.out.println("Open Zoo");
         }, 0, 1, TimeUnit.MINUTES);
