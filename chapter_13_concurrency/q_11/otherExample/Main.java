@@ -26,11 +26,34 @@ public class Main {
         .findFirst()
         .get());
     }
+
+    public static void run_4() {
+       List.of(10, 4, 11, 7)
+        .parallelStream()
+        .sorted()
+        .peek(i -> System.out.println("sorted->peek: " + i + " on " + Thread.currentThread().getName()))
+        .forEach((i) -> System.out.println("peak->forEach: " + i + " on " + Thread.currentThread().getName()));
+    }
+
+    public static void run_5() {
+        System.out.println("");
+        List.of(10, 4, 11, 7)
+        .parallelStream()
+        .sorted()
+        .peek(i -> System.out.println("sorted->peek: " + i + " on " + Thread.currentThread().getName()))
+        .forEachOrdered((i) -> System.out.println("peak->forEachOrdered: " + i + " on " + Thread.currentThread().getName()));
+    }
     
     public static void main(String[] args) {
+        /* 
         run_1();
         run_2();
         run_3();
+        */
+        run_4();
+        /* 
+        run_5();
+        */
     }
     
 }
