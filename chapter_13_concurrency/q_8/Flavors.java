@@ -12,7 +12,7 @@ public class Flavors {
             .forEach(m -> {
                 Thread thread = new Thread(task);
                 System.out.println("thread name: " + thread.getName());
-                thread.run();
+                thread.run(); 
             });
         System.out.println(counter);
 
