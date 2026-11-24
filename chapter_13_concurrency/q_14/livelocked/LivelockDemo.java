@@ -28,7 +28,7 @@ public class LivelockDemo {
         
         public void eatWith(Spoon spoon, Diner spouse) {
             while (isHungry) {
-                 try { Thread.sleep(1000); } 
+                try { Thread.sleep(1000); } 
                 catch(InterruptedException e) {}
 
                 // Don't have the spoon, so wait patiently for spouse.
