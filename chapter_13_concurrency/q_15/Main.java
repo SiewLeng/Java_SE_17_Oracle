@@ -14,8 +14,7 @@ public class Main {
         ConcurrentMap<Boolean,List<String>> data = Stream.of(cats, bears).flatMap((s) -> {
             System.out.println(Thread.currentThread().getName() + s);
             return s;
-        })
-            .collect(Collectors.groupingByConcurrent(s -> !s.startsWith("p")));
+        }).collect(Collectors.groupingByConcurrent(s -> !s.startsWith("p")));
 
         System.out.println(data.get(false).size() 
             + " " + data.get(true).size() );
@@ -26,11 +25,11 @@ public class Main {
     public static void run_2() {
         Stream<String> cats = Stream.of("leopard", "lynx", "ocelot", "puma");
         Stream<String> bears = Stream.of("panda","grizzly","polar");
-        ConcurrentMap<Boolean,List<String>> data = Stream.of(cats, bears).flatMap((s) -> {
+        Stream<String> fruits = Stream.of("pineapple","pear","apple");
+        ConcurrentMap<Boolean,List<String>> data = Stream.of(cats, bears, fruits).flatMap((s) -> {
             System.out.println(Thread.currentThread().getName() + s);
             return s;
-        })
-            .collect(Collectors.groupingByConcurrent(s -> !s.startsWith("p")));
+        }).collect(Collectors.groupingByConcurrent(s -> !s.startsWith("p")));
 
         System.out.println(data.get(false).size() 
             + " " + data.get(true).size() );
