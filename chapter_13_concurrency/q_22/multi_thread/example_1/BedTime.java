@@ -9,7 +9,7 @@ public class BedTime {
     private int s2 = 0;
 
     private void countSheep() throws InterruptedException {
-        ExecutorService service = Executors.newFixedThreadPool(5);
+        ExecutorService service = Executors.newFixedThreadPool(100);
         try {
             for (int i = 0; i < 100; i++) {
                 service.execute(() -> {
