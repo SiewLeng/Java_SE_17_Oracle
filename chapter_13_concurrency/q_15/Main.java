@@ -6,11 +6,30 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
-
-    public static void run() {
+    
+    // with parallel stream
+    public static void run_1() {
         Stream<String> cats = Stream.of("leopard", "lynx", "ocelot", "puma").parallel();
         Stream<String> bears = Stream.of("panda","grizzly","polar").parallel();
-        ConcurrentMap<Boolean,List<String>> data = Stream.of(cats, bears).flatMap(s -> s)
+        ConcurrentMap<Boolean,List<String>> data = Stream.of(cats, bears).flatMap((s) -> {
+            System.out.println(Thread.currentThread().getName() + s);
+            return s;
+        })
+            .collect(Collectors.groupingByConcurrent(s -> !s.startsWith("p")));
+
+        System.out.println(data.get(false).size() 
+            + " " + data.get(true).size() );
+
+    }
+    
+    // without parallel stream
+    public static void run_2() {
+        Stream<String> cats = Stream.of("leopard", "lynx", "ocelot", "puma");
+        Stream<String> bears = Stream.of("panda","grizzly","polar");
+        ConcurrentMap<Boolean,List<String>> data = Stream.of(cats, bears).flatMap((s) -> {
+            System.out.println(Thread.currentThread().getName() + s);
+            return s;
+        })
             .collect(Collectors.groupingByConcurrent(s -> !s.startsWith("p")));
 
         System.out.println(data.get(false).size() 
@@ -19,6 +38,7 @@ public class Main {
     }
     
     public static void main(String[] args) {
-        run();
+        run_1();
+        run_2();
     } 
 }
