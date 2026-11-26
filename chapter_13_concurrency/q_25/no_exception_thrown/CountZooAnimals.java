@@ -11,14 +11,14 @@ import java.util.concurrent.TimeoutException;
 public class CountZooAnimals {
 
     public static void performCount(int animal) {
-        System.out.println("performCount: " + animal);
+        System.out.println("performCount " + animal + " from: " + Thread.currentThread().getName());
     }
 
     public static void printResults(Future<?> f) {
         try {
             System.out.println(f.get(1, TimeUnit.DAYS));
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
-            System.out.println("Exception!");
+            System.out.println("Exception! " + e);
         }
     }
 
@@ -32,6 +32,7 @@ public class CountZooAnimals {
                 r.add(s.submit(task));
             }
             r.forEach(f -> printResults(f));
+            System.out.println("running main from: " + Thread.currentThread().getName());
         } finally {
             s.shutdown();
         }

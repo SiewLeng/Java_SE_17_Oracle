@@ -19,7 +19,7 @@ public class CountZooAnimals {
         try {
             System.out.println(f.get(1, TimeUnit.DAYS));
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
-            System.out.println("Exception!");
+            System.out.println("Exception! " + e);
         }
     }
 
