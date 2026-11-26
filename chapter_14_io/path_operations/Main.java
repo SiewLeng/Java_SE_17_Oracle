@@ -1,12 +1,14 @@
 package path_operations;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Main {
-    private static final String PARENT_PATH = "C:/Users/LENOVO/code/Java_SE_17_Oracle/chapter_14_referencing_files_and_directories";
+    private static final String PARENT_PATH = "C:/Users/LENOVO/code/Java_SE_17_Oracle/chapter_14_io";
     private static final String PATH_1_STRING = PARENT_PATH + "/path_operations/zoo/shells.txt"; 
     private static final Path path_1 = Path.of(PATH_1_STRING);
-    private static final String PATH_2_STRING = "."; 
+    private static final String PATH_2_STRING = "./path_operations/../config"; 
+    // . refers to chapter_14_io folder
     private static final Path path_2 = Path.of(PATH_2_STRING);
     
     public static void viewPath() {
@@ -38,8 +40,8 @@ public class Main {
         printPathInformation(path_1);
         printPathInformation(path_2);
         System.out.println(path_2.toAbsolutePath().normalize());
+        System.out.println(Files.exists(path_2));
 
-        
     } 
 
     

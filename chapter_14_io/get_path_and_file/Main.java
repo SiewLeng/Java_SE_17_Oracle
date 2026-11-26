@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Main {
-    private static final String PARENT_PATH = "C:/Users/LENOVO/code/Java_SE_17_Oracle/chapter_14_referencing_files_and_directories";
+    private static final String PARENT_PATH = "C:/Users/LENOVO/code/Java_SE_17_Oracle/chapter_14_io";
     private static final String PATH_1 = PARENT_PATH + "/get_path_and_file/Main.java"; // exists
     private static final String PATH_2 = PARENT_PATH + "/config/app.properties"; // does not exist
     
