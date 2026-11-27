@@ -39,20 +39,20 @@ public class Main {
         // path is absolute when it starts with either / or c:
         // otherwise, the path is relative
 
-        Path base = Path.of(PARENT_PATH);
+        Path base = Path.of(PARENT_PATH + "/path_operations");
 
-        // Relative argument
-        Path result1 = base.resolve("path_operations/zoo/shells.txt");
+        // Relative argument relative to base path
+        Path result1 = base.resolve("zoo/shells.txt");
         System.out.println("Resolving using relative argument: " + result1);
         System.out.println("file exists: " + Files.exists(result1));
 
-        // Dot / parent segments
-        Path result2 = base.resolve("./path_operations/../config");
+        // Dot / parent segments relative to base path
+        Path result2 = base.resolve("./../config");
         System.out.println("Resolving using dot / parent segment: " + result2);
         System.out.println("file exists: " + Files.exists(result2));
 
         // Absolute argument 
-        Path result3 = base.resolve("C:/Users/LENOVO/code/Java_SE_17_Oracle/chapter_13_concurrency");
+        Path result3 = base.resolve("C:/Users/LENOVO/code/./Java_SE_17_Oracle/chapter_13_concurrency");
         System.out.println("Resolving using absolute argument: " + result3);
         System.out.println("file exists: " + Files.exists(result3));
 
@@ -87,12 +87,15 @@ public class Main {
     }
 
     public static void normalizingPath() {
+        // relative path 
         Path path1 = Path.of("./path_operations/zoo/../Main.java");
         System.out.println("\nnormalized path 1: " + path1.normalize());
-
-        Path path2 = Path.of(PARENT_PATH + "/config/../path_operations/Main.java");
+        
+        // absolute path
+        Path path2 = Path.of(PARENT_PATH + "/config/./../path_operations/Main.java");
         System.out.println("normalized path 2: " + path2.normalize());
-
+        
+        // relative path
         Path path3 = Path.of("../../Java_SE_17_Oracle");
         System.out.println("normalized path 3: " + path3.normalize());
         // System.out.println(Files.exists(path3));
@@ -106,7 +109,7 @@ public class Main {
             System.out.println("path 1 does not exists");
         }
 
-        Path path2 = Path.of(PARENT_PATH + "/config/../path_operations/Main.java");
+        Path path2 = Path.of(PARENT_PATH + "/config/./../path_operations/Main.java");
         try {
             System.out.println("absolute path 2 : " + path2.toRealPath());
         } catch (IOException e) {
